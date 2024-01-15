@@ -1,5 +1,8 @@
 <script setup>
-import _ from './components/Calculator.vue'
+import Calculator from 'mathjs'
+import Calculator from './components/Calculator.vue'
 </script>
 
-<template></template>
+<template>
+  <Calculator />
+</template>
