@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap')
 
+$vw-sm: 640px
+$vw-md: 768px
+$vw-lg: 1024px
+$vw-xl: 1280px
+$vw-2xl: 1536px
+
 :root
-  font-size: 1.75rem
-  font-family: 'Rubik'
+  font: clamp(1rem, -0.4286rem + 3.5714vw, 3rem) 'Rubik', sans-serif
   background: #181818
   --c-1: #fff
   --c-2: #00C896
   --c-3: #EE6464
-  --b-r: 8px
+  --b-r: 12px
   --b-s: 1px solid rgba(0, 0, 0, .25)
-  --g: .5rem
+  --g: 5px
 
 @mixin button
   display: grid
@@ -21,7 +26,7 @@
   display: grid
   padding: var(--g)
   gap: var(--g)
-
+  margin: 0 auto
   .grid
     display: grid
     height: calc(100svh - (var(--g)*2))
@@ -39,7 +44,8 @@
       color: var(--c-1)
       padding-inline: var(--g)
       background: rgba(220, 220, 220, .05)
-    button
+      overflow: hidden
+    div
       @include button
     .num
       color: var(--c-1)
