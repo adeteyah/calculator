@@ -1,7 +1,5 @@
 <script setup>
-import _ from './components/Functions.vue'
+import _ from './components/Calculator.vue'
 </script>
 
-<template>
-  <button type="button" @click="count++">count is {{ count }}</button>
-</template>
+<template></template>

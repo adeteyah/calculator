@@ -1,4 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap')
 
 :root
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+  font-size: 1.75rem
+  font-family: 'Rubik'
+  background: #181818
+  --c-1: #fff
+  --c-2: #00C896
+  --c-3: #EE6464
+  --b-r: 8px
+  --b-s: 1px solid rgba(0, 0, 0, .25)
+  --g: .5rem
+
+@mixin button
+  display: grid
+  place-content: center
+  border: var(--b-s)
+  border-radius: var(--b-r)
+
+.container
+  display: grid
+  padding: var(--g)
+  gap: var(--g)
+
+  .grid
+    display: grid
+    height: calc(100svh - (var(--g)*2))
+    gap: var(--g)
+    grid-template-columns: repeat(4, 1fr)
+    .result
+      grid-column-start: 1
+      grid-column-end: 5
+      display: grid
+      place-content: center end
+      border: var(--b-s)
+      border-radius: var(--b-r)
+      text-align: end
+      font-size: 4rem
+      color: var(--c-1)
+      padding-inline: var(--g)
+      background: rgba(220, 220, 220, .05)
+    button
+      @include button
+    .num
+      color: var(--c-1)
+      background: rgba(220, 220, 220, .05)
+      &:hover
+        background: rgba(220, 220, 220, .15)
+    .op
+      color: var(--c-2)
+      background: rgba(220, 220, 220, .05)
+      &:hover
+        background: rgba(220, 220, 220, .15)
