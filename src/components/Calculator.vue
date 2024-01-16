@@ -63,6 +63,11 @@ export default {
                 console.log('clear all')
             }
         },
+    },
+    watch: {
+        watchCurrent: function () {
+            this.current = `${parseFloat(this.current).toFixed(3)}`
+        }
     }
 }
 </script>
@@ -70,7 +75,7 @@ export default {
 <template>
     <div class="container">
         <div class="grid">
-            <div class="result">{{ current || '0' }}</div>
+            <div @change="watchCurrent" class="result">{{ current || '0' }}</div>
             <div @click="clearAll" class="op">AC</div>
             <div @click="append('%')" class="op">%</div>
             <div @click="clear" class="op">C</div>
