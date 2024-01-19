@@ -27,7 +27,7 @@ export default {
             try {
                 this.current = math.evaluate(this.current)
             } catch (error) {
-                alert('Error')
+                alert('Numbers expression is not calculatable')
             }
         },
         handleKeyDown(event) {
