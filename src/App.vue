@@ -4,5 +4,4 @@ import Calculator from './components/Calculator.vue'
 
 <template>
   <Calculator />
-  <!-- TODO: dot(), auto comma, error notification -->
 </template>

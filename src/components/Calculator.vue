@@ -23,11 +23,6 @@ export default {
         append(expr) {
             this.current = `${this.current}${expr}`
         },
-        dot() {
-            if (this.current.indexOf('.') === -1) {
-                this.append('.')
-            }
-        },
         equal() {
             try {
                 this.current = math.evaluate(this.current)
@@ -63,11 +58,6 @@ export default {
                 console.log('clear all')
             }
         },
-    },
-    watch: {
-        watchCurrent: function () {
-            this.current = `${parseFloat(this.current).toFixed(3)}`
-        }
     }
 }
 </script>
@@ -75,7 +65,7 @@ export default {
 <template>
     <div class="container">
         <div class="grid">
-            <div @change="watchCurrent" class="result">{{ current || '0' }}</div>
+            <div class="result">{{ current.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') || '0' }}</div>
             <div @click="clearAll" class="op">AC</div>
             <div @click="append('%')" class="op">%</div>
             <div @click="clear" class="op">C</div>
@@ -94,7 +84,7 @@ export default {
             <div @click="append('+')" class="op">&plus;</div>
             <div @click="append('00')" class="num">00</div>
             <div @click="append('0')" class="num">0</div>
-            <div @click="dot" class="op">.</div>
+            <div @click="append('.')" class="op">.</div>
             <div @click="equal" class="op">=</div>
         </div>
     </div>
